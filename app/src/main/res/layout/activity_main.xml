@@ -37,6 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_subtitle">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/total_bill"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Digite valor total da conta"
@@ -54,6 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/til_total">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/num_people"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:maxLength="2"
@@ -69,8 +71,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <RadioGroup
+        android:id="@+id/rg_percentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/number_of_people"
+        app:layout_constraintStart_toStartOf="@+id/number_of_people"
+        app:layout_constraintTop_toBottomOf="@+id/number_of_people">
+        <RadioButton
+            android:id="@+id/rg_option_one"
+            android:text="10%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rg_option_two"
+            android:text="15%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rg_option_three"
+            android:text="20%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RadioGroup>
+
     <Button
-        android:id="@+id/btn_calc"
+        android:id="@+id/btn_done"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -78,10 +109,10 @@
         android:text="Calcular"
         app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/number_of_people" />
+        app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
 
     <Button
-        android:id="@+id/limpar"
+        android:id="@+id/btn_clean"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -89,7 +120,7 @@
         android:text="Limpar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
-        app:layout_constraintTop_toBottomOf="@+id/number_of_people" />
+        app:layout_constraintTop_toBottomOf="@+id/rg_percentage" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
