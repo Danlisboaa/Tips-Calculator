@@ -20,14 +20,22 @@ class MainActivity: AppCompatActivity (){
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var percentage : Int = 0
+
         binding.rbOptionOne.setOnCheckedChangeListener {_, isChecked ->
-            println("Option one : $isChecked")
+            if(isChecked){
+                percentage = 10
+            }
         }
         binding.rbOptionTwo.setOnCheckedChangeListener{_, isChecked ->
-            println("Option two : $isChecked")
+            if(isChecked){
+                percentage = 15
+            }
         }
         binding.rbOptionThree.setOnCheckedChangeListener {_,isChecked ->
-            println("Option Three : $isChecked")
+            if(isChecked){
+                percentage = 20
+            }
         }
 
         binding.btnClean.setOnClickListener{
@@ -36,8 +44,12 @@ class MainActivity: AppCompatActivity (){
 
         }
         binding.btnDone.setOnClickListener{
-            val total: Float = binding.totalBill.text.toString().toFloat()
-            val nPeople: Float = binding.numPeople.text.toString().toFloat()
+            val totalTable: Float = binding.totalBill.text.toString().toFloat()
+            val nPeople: Int = binding.numPeople.text.toString().toInt()
+            val totalTemp = totalTable / nPeople
+            val totalTips = (totalTemp * percentage) / 100
+            val totalWithTips = totalTemp+totalTips
+            println("daniel"+ totalWithTips )
         }
     }
 }
