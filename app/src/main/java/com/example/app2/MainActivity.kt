@@ -39,8 +39,8 @@ class MainActivity: AppCompatActivity (){
         }
 
         binding.btnClean.setOnClickListener{
-            println("Daniel 1" + binding.totalBill.text)
-            println("Daniel 1" + binding.numPeople.text)
+            println(binding.totalBill.text)
+            println(binding.numPeople.text)
 
         }
         binding.btnDone.setOnClickListener{
@@ -49,7 +49,7 @@ class MainActivity: AppCompatActivity (){
             val totalTemp = totalTable / nPeople
             val totalTips = (totalTemp * percentage) / 100
             val totalWithTips = totalTemp+totalTips
-            println("daniel"+ totalWithTips )
+            println(totalWithTips)
         }
     }
 }
